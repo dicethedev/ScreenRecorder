@@ -1,0 +1,82 @@
+<!-- Before getting started with this project i run the npm init -y to
+     add the package.json and i run npm 1 -D live-server and i run npm i -D tailwindcss to install
+tailwindcss... but, i can omit this by not running this if i like
+When back to package.json to change some setting on it by omitting ( "test": "echo \"Error: no test specified\" && exit 1"
+"css": "tailwindcss -i src/tailwind.css -o dist/main.css")
+ and adding ( "dev": "live-server . --no-css-inject") NB=> if you are not using Tailwindcss you remove the ( --no-css-inject")
+but if you are using it i recommend you use it. Then, i run on the terminal npx tailwindcss init
+After running this  create tailwind.config.js in my file. Then i enter  into the file and add this under "extend"   fontfamily: {
+            sans: ["Fira sans", "sans-serif"]
+        }  Then under "purge" i added  mode: "jit", Then inside the purge i added  purge: [
+      "*.html"
+    ],  Then i created a Src folder and added tailwind.css file in it, Then i added some function inside the tailwindcss file
+  Then i run this command on cmd (npm run css) to get dist folder and inside it we have the main.css that does change
+Then i went back to package.json add on the of --no-css-inject (--watch) and run thre this again npm run css -->
+
+<Doctype html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UT-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Screen Recorder</title>
+
+        <link rel="stylesheet" href="dist/main.css">
+    </head>
+
+    <body class="bg-gray-800 text-white">
+        <header class="bg-gray-900">
+            <div class="container mx-auto flex justify-center items-center py-4">
+                <h1 class="text-2xl font-black uppercase">Screen Recorder</h1>
+                <!-- After adding the h1 tag then i run the commmand on different cmd by typing (npm run dev)-->
+            </div>
+        </header>
+
+        <div class="overflow-hidden">
+            <div class="container mx-auto py-8 px-4">
+                <h2 class="text-xl text-gray-500 uppercase font-light mb-4">Video Recorder</h2>
+
+                <video src="" autoplay class="video-feedback bg-black w-full h-auto mb-4"></video>
+
+
+                <div class="flex justify-center items-center  -mx-4  mb-8">
+
+                    <!-- Button on is here -->
+                    <button class="start-recording mx-4 flex-1 bg-gradient-to-br from-blue-700 to-green-500 p-4 uppercase text-lg font-bold 
+                        transition duration-300 hover:opacity-90 disabled:opacity-50">
+                        Start Recording
+                    </button>
+
+                    <!-- Button Two is here -->
+                    <button class="stop-recording mx-4 flex-1 bg-gradient-to-br from-blue-700 to-green-500 p-4 uppercase text-lg font-bold 
+                    transition duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                        Stop Recording
+                    </button>
+
+                </div>
+
+                <div class="recorded-video-wrap hidden">
+                    <h2 class="text-xl text-gray-500 uppercase font-light mb-4">Download your recorded video</h2>
+
+                    <video src="" class="recorded-video bg-black w-full h-auto mb-4"></video>
+
+                    <div class="flex  justify-center items-center  -mx-4  mb-8">
+                        <!-- Button  -->
+                        <a href="" class="download-video mx-4 text-center flex-1 bg-gradient-to-br from-blue-700 to-green-500 p-4 uppercase text-lg font-bold 
+                            transition duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+                            Download Video
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <script src="dist/main.js"></script>
+    </body>
+
+    </html>
